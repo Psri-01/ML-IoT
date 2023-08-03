@@ -1,3 +1,7 @@
+# Edge-based detection in Tomato leaves using Machine Learning
+
+Trained a CNN model to detect four categories of diseases in tomato leaves and loaded this model into a Raspberry Pi as a tflite model for detection, thereby disease prevention. Gained insights into image processing, data manipulation and hands-on machine learning.
+
 # Code description (summary)
 
 1 • The code imports necessary libraries such as os, cv2, pandas, seaborn, matplotlib, numpy, and tensorflow for image processing, data manipulation, visualization, and machine learning tasks.
