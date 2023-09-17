@@ -1,6 +1,41 @@
 # Edge-based detection in Tomato leaves using Machine Learning
 
-Trained a CNN model to detect four categories of diseases in tomato leaves and loaded this model into a Raspberry Pi as a tflite model for detection, thereby disease prevention. Gained insights into image processing, data manipulation and hands-on machine learning.
+# Motivation behind this project
+
+It is an individual project integrating the capabilities of ML and IoT, done to have a deep understanding of the connection between the two. I was also interested in building and deploying ML models so this was a good use case to start with.
+
+# Brief description of the project
+
+In this project, an ML model was developed to identify four types of leaf diseases, namely Tomato Bacterial spot, Late blight, Septoria leaf spot and Yellow Leaf Curl Virus, apart from healthy tomato leaves using a light weight CNN model and deploy it on Raspberry Pi 3 (bullseye) after converting it to a tflite(TensorFlow lite) model to test the presence or absence of diseases in the leaves by predictive analysis. Accuracy obtained by this model was almost the same as that obtained by a VGG-19 model (Visual Geometry group, pretrained model). It helped me gain insights into image processing, data manipulation and hands-on machine learning.
+
+# General stages of training Convolutional Neural Networks
+
+1. Data collection and preparation
+The first step is to collect and prepare data for training the CNN model. Collected images of tomato leaves with and without diseases from the PlantVillage dataset on Kaggle and reduced it to 5 directories with 1k images per directory, and then resizing and cropping the images to a standard size.
+
+2. Model architecture
+The next step is to design the architecture of the CNN model. This involves choosing the number of layers, the type of layers, and the activation functions for each layer.
+
+3. Model training
+Once the model architecture is designed, the next step is to train the model. This involves feeding the training data into the model and adjusting the weights of the model so that it learns to classify images of tomato leaves with and without diseases. 
+
+4. Model evaluation
+Once the model is trained, the next step is to evaluate its performance. This involves testing the model on a dataset of images that it has not seen before, and measuring its accuracy and other metrics. Using ImageDataGenerator and normalizing the images to 1./32 for easier training and validation set splits. Validation accuracy was 96.69% and training accuracy was around 92%. Final loss is 0.103
+
+5. Model deployment
+Once the model is evaluated and found to be satisfactory, the next step is to convert it to a TensorFlow lite format and deploy it in a Raspberry Pi for edge detection of tomato leaf diseases and be further used in real-world applications.
+
+# Key Challenges faced and how I addressed them
+
+1. Data imbalance: The dataset of images that I used was imbalanced, meaning that there were more images of tomato leaves with diseases than without. This made it difficult for the model to learn to classify images of tomato leaves with diseases.
+To address this challenge, I used a technique called data augmentation to artificially increase the number of images of tomato leaves with diseases. This involved creating new images of tomato leaves with diseases by rotating, flipping, and cropping the existing images.
+
+2. Lack of labeled data: Labeled data is data that has been manually annotated with the correct labels. This is essential for training a machine learning model, but it can be difficult and time-consuming to create.
+To address this challenge, I created 5 labels in the detection phase in Raspberry Pi Thonny editor.
+
+# Model Summary 
+
+![image](https://github.com/Psri-01/ML-IoT/assets/114862496/8af56300-152e-4d60-aa06-308cb84a4533)
 
 # Code description (summary)
 
