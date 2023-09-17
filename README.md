@@ -10,6 +10,9 @@ In this project, an ML model was developed to identify four types of leaf diseas
 
 # General stages of training Convolutional Neural Networks
 
+![image](https://github.com/Psri-01/ML-IoT/assets/114862496/a2dc12f2-edfa-4f9f-96ea-8196a61ba334)
+
+
 1. Data collection and preparation
 The first step is to collect and prepare data for training the CNN model. Collected images of tomato leaves with and without diseases from the PlantVillage dataset on Kaggle and reduced it to 5 directories with 1k images per directory, and then resizing and cropping the images to a standard size.
 
@@ -82,3 +85,16 @@ To address this challenge, I created 5 labels in the detection phase in Raspberr
 
 
 15 • Predicting and printing the class label: The code uses np.argmax to find the index of the highest probability in the output tensor. This index is used to retrieve the corresponding class label from class_labels. Finally, the predicted class label is printed using print(predicted_label).
+
+# Why VGG?
+
+VGG architectures have a simple and uniform structure, which makes them easy to understand and implement. They are proficient in extracting intricate features from images, making them effective for various computer vision tasks.
+Transfer Learning: Due to their uniform architecture they are used for transfer learning where pre-trained weights can be fine-tuned for specific tasks.
+
+Cons:
+VGG networks can be computationally expensive to train and require substantial computing resources.
+Memory Consumption: The uniform structure of VGG leads to a large number of parameters, resulting in higher memory consumption. This leads to difficulty when trying to deploy it in a memory constrained device, which is why I went for the Sequential model instead.
+
+# Future Scope
+
+The model could suggest appropriate fertilizers based on the disease, obtain model accuracy, use transfer learning approaches to get improved results, reduce model size further to enable deployment in an edge device (ESP S3 or Arduino BLE) and lastly, we could get real time images of a tomato leaf using a Pi Camera and detect the disease for enabling smart agricultural decisions, which would inform farmers of early crop failure and enable them to take proactive measures to prevent it.
